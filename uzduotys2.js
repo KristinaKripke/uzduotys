@@ -4,9 +4,9 @@
 
 function sezonai(menesis) {
     switch (menesis) {
+        case 12:
         case 1:
         case 2:
-        case 3:
             return 'Ziema';
         case 3:
         case 4:
@@ -32,6 +32,8 @@ console.log(sezonai (1)); // Ziema
 console.log(sezonai(4)); // Pavasaris
 console.log(sezonai(6)); // Vasara
 console.log(sezonai(11)); // Ruduo
+console.log(sezonai(13)); // Tokio menesio numerio nera
+
 console.log('-----------');
 
 //2 uzduotis
