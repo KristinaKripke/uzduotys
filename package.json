@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "uzduotys1.js",
   "scripts": {
+    "uzduotys2": "node --watch uzduotys2.js",
     "uzduotys1": "node --watch uzduotys1.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
