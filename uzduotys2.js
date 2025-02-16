@@ -153,7 +153,20 @@ console.log();
 console.log(keliamiejiMetai(1984)); // Keliamieji metai
 console.log(keliamiejiMetai(2024)); // Keliamieji metai
 console.log(keliamiejiMetai(1362)); // Nekeliamieji metai
+
+function keliamieji(metai) {
+    if (new Date(metai, 1, 29).getDate()===29){
+        return true;
+    }   return false;
+    
+}
+console.log();
+console.log(keliamieji(1984)); // Keliamieji metai
+console.log(keliamieji(2024)); // Keliamieji metai
+console.log(keliamieji(1362)); // Nekeliamieji metai
 console.log('-----------');
+
+
 
 //9 uzduotis
 /*Sukurkite funkciją, kuri pagal vartotojo įvestą temperatūrą(Celsius) priskiria aprangos rekomendaciją: "Kepurių nereikia", "Kepurės reikalingos", "Geriau neik į lauką".Koks operatorius geriausiai tinka?*/

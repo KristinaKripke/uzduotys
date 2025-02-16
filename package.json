@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "uzduotys1.js",
   "scripts": {
+    "14d:uzduotys": "node --watch 14d-uzduotys.js",
+    "treciadienio:uzduotys": "node --watch 12d-uzduotys.js",
+    "pirmadienio:uzduotys": "node --watch pirmadienio-uzduotys.js",
+    "uzduotys:string": "node --watch uzduotys-string-method.js",
     "uzduotys3": "node --watch uzduotys3.js",
     "uzduotys2": "node --watch uzduotys2.js",
     "uzduotys1": "node --watch uzduotys1.js",
