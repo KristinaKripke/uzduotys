@@ -13,7 +13,8 @@ for (let i = 0; i < numbers1.length; i++) {
 console.log(sum);
 
 // Sprendimas su array metodu (reduce):
-// Jūsų kodas čia...
+const sum1 = numbers1.reduce((acc, num1) => acc + num1, 0);
+console.log(sum1);
 
 console.log('--------------');
 
@@ -25,15 +26,17 @@ console.log('2 užduotis');
 console.log();
 // Sprendimas su for ciklu:
 const numbers2 = [1, 2, 3, 4, 5, 6];
+let count3 = 0;
 for (let i = 1; i <= numbers2.length; i++) {
     if (i % 2 === 0) {
-        console.log(i);
-        
-    }
+        count3++;
+    } 
 }
+console.log(count3);
 
 // Sprendimas su filter metodu:
-// Jūsų kodas čia...
+const numbers2filter = numbers2.filter((n, i) => i % 2 !== 0).length;
+console.log(numbers2filter);
 
 console.log('--------------');
 
@@ -56,7 +59,7 @@ function didziausiasSk(arr1) {
 console.log(didziausiasSk(numbers3));
 
 // Sprendimas su Math.max ir spread operator:
-// Jūsų kodas čia...
+console.log(Math.max(...numbers3));
 
 console.log('--------------');
 
@@ -81,8 +84,8 @@ function pasikartoja1(arr3, skai) {
 console.log(pasikartoja1(numbers4, target));
 
 // Sprendimas su filter metodu:
-// Jūsų kodas čia...
-
+const numbers4Filter = numbers4.filter(n => n === target).length;
+console.log(numbers4Filter);
 console.log('--------------');
 // =============================================
 // Užduotis 5: Išfiltruoti ir sukurti naują masyvą, kuriame būtų tik teigiami skaičiai
@@ -102,7 +105,9 @@ let nums = [];
     
 
 // Sprendimas su filter metodu:
-// Jūsų kodas čia...
+const numbers5Filter = numbers5.filter(n => n > 0);
+console.log(numbers5Filter);
+
 console.log('--------------');
 
 // =============================================
@@ -120,7 +125,10 @@ for (let i = 1; i <= numbers6.length; i++) {
 console.log(sandauga);
 
  // Sprendimas su reduce metodu:
- // Jūsų kodas čia...
+
+const sandauga1 = numbers6.reduce((acc, num6) => acc * num6, 1);
+console.log(sandauga1);
+
 console.log('--------------');
 
 // =============================================
@@ -139,7 +147,8 @@ for (let i = array7.length; i > 0; i--) {
 console.log(arr7);
 
  // Sprendimas su built-in reverse metodu (kopijuojame, kad nepakeistume originalo):
-// Jūsų kodas čia...
+const array71 = [1, 2, 3, 4, 5];
+console.log(array71.reverse());
 
 console.log('--------------');
 
@@ -151,6 +160,7 @@ console.log('--------------');
 console.log('8 užduotis');
 console.log();
 // Sprendimas su for ciklu:
+
 const array8 = ['a', 'b', 'c', 'd'];
 const searchElement8 = 'c';
 function indeksas5(arr8, sym) {
@@ -185,7 +195,10 @@ function dideja(arr9) {
 console.log(dideja(array9));
 
 // Sprendimas su every metodu:
-// Jūsų kodas čia...
+const everyDideja = array9.every((num, i, arr) => i === 0 || num > arr[i - 1]);
+console.log(everyDideja);
+
+
 console.log('--------------');
 
 // =============================================
@@ -205,13 +218,11 @@ const numbers10 = [1, 2, 3, 4, 5];
         return pakelti;
     }
     console.log(pakeltiKv(numbers10));
-    
-
-
-    
 
 // Sprendimas su map metodu:
-// Jūsų kodas čia...
+const numbers10Map = numbers10.map(n => n * n);
+console.log(numbers10Map);
+
 console.log('--------------');
 
  // =============================================
@@ -232,8 +243,12 @@ function susumuoti(numb11) {
 }
 console.log(susumuoti(numbers11));
 
+
 // Sprendimas su filter ir reduce:
-// Jūsų kodas čia...
+
+const num11filter = numbers11.filter((n, i) => i % 2 === 0).reduce((acc, num11) => acc + num11, 0);
+console.log(num11filter);
+
 console.log('--------------');
 
 
@@ -254,7 +269,8 @@ function vidurkis12(masyvas12) {
 console.log(vidurkis12(numbers12));
 
 // Sprendimas su reduce:
-// Jūsų kodas čia...
+const numbers12Reduce = numbers12.reduce((acc, num12) => acc + num12 / numbers12.length, 0);
+console.log(numbers12Reduce);
 
 console.log('--------------');
 
@@ -266,22 +282,22 @@ console.log('13 užduotis');
 console.log();
 
 // Sprendimas su for ciklu:
-const numbers13 = [1, 2, 3, 2, 4, 2, 5];
+const numbers13 = [1, 2, 3, 2, 4, 3, 5];
 function neVienodi(nums13) {
     let sum13 = []; 
 for (let i = 0; i < nums13.length; i++) {
     if (!sum13.includes(nums13[i])) {
-        sum13.push(nums13[i]);
-        
+        sum13.push(nums13[i])
     }
-    
-} return sum13;
+
+    } return sum13;
 }
 console.log(neVienodi(numbers13));
 
 
 // Sprendimas su Set:
-// Jūsų kodas čia...
+const naujasMasyvas = [...new Set(numbers13)];
+console.log(naujasMasyvas);
 
 console.log('--------------');
 
@@ -309,8 +325,11 @@ function antrasDidziausias14(arr14) {
 console.log(antrasDidziausias14(numbers14));
 
 // Sprendimas su sort metodu (kopijuojame, kad nepakeistume originalo):
-// Jūsų kodas čia...
-
+function suSort(arr) {
+    let sort = [...arr].sort((a, b) => b - a);
+    return sort[1];
+}
+console.log(suSort(numbers14));
 
 console.log('--------------');
 // =============================================
@@ -332,7 +351,9 @@ for (let i = 0; i < numbers15.length; i++){
 console.log(count);
 
 // Sprendimas su filter:
-// Jūsų kodas čia...
+const numbers15Filter = numbers15.filter(n => n > threshold).length;
+console.log(numbers15Filter);
+
 console.log('--------------');
 
 // =============================================
@@ -346,6 +367,16 @@ const arrayAb = [1, 2, 3];
 const arrayBa = [4, 5, 6];
 // Sprendimas su for ciklu:
 
+function sujungtiArray(arr1, arr2) {
+    let sujungti = [];
+for (let i = 0; i < arr1.length; i++) {
+    sujungti.push(arr1[i]);
+    } 
+for (let i = 0; i < arr2.length; i++) {
+    sujungti.push(arr2[i]);
+} return sujungti;
+} 
+console.log(sujungtiArray(arrayAb, arrayBa));
 
 // Sprendimas su concat metodu:
 const arrayA = [1, 2, 3];
@@ -359,12 +390,21 @@ console.log('--------------');
 // const nestedArray = [[1, 2], [3, 4], [5, 6]];
 console.log('17 užduotis');
 console.log();
-
+const nestedArray = [[1, 2], [3, 4], [5, 6]];
 // Sprendimas su for ciklu:
-// Jūsų kodas čia...
+
+function islyginti(narray) {
+    let arrayFlat = [];
+    for (let i = 0; i < narray.length; i++) {
+        for (let j = 0; j < narray[i].length; j++) {
+            arrayFlat.push(narray[i][j]);
+        }
+    } return arrayFlat;
+}
+console.log(islyginti(nestedArray));
 
 // Sprendimas su flat metodu:
-const nestedArray = [[1, 2], [3, 4], [5, 6]];
+
 console.log(nestedArray.flat());
 console.log('--------------');
 
@@ -376,11 +416,22 @@ console.log('--------------');
 console.log('18 užduotis');
 console.log();
 // Sprendimas su for ciklu:
-
+const arrA = [1, 2, 3, 4];
+const arrB = [3, 4, 5, 6];
+function bendri(arrA1, arrB2) {
+    let vienodi = [];
+    for (let i = 0; i < arrA1.length; i++) {
+        for (let n = 0; n < arrB2.length; n++) {
+            if (arrA1[i] === arrB2[n])
+                vienodi.push(arrA1[i]);
+        }
+    } return vienodi;
+}
+console.log(bendri(arrA, arrB));
 
 // Sprendimas su filter:
-// Jūsų kodas čia...
-
+const bendriFilter = arrA.filter(n => arrB.includes(n));
+console.log(bendriFilter);
 console.log('--------------');
 
 // =============================================
@@ -390,10 +441,28 @@ console.log('--------------');
 console.log('19 užduotis');
 console.log();
 // Sprendimas su for ciklu:
-
+const numbers19 = [1, 2, 3, 4, 5, 6];
+let skaiciai = {
+    lyginiai: [],
+    nelyginiai: [],
+}
+for (let i = 0; i < numbers19.length; i++) {
+    if (numbers19[i] % 2 === 0) {
+        skaiciai.lyginiai.push(numbers19[i]);
+    } else {
+        skaiciai.nelyginiai.push(numbers19[i]);
+    }
+}
+console.log(skaiciai);
 
 // Sprendimas su reduce:
-// Jūsų kodas čia...
+
+const skaiciai19 = numbers19.reduce((acc, num) => {
+    num % 2 === 0 ? acc.lyginiai.push(num) : acc.nelyginiai.push(num);
+    return acc;
+}, { lyginiai: [], nelyginiai: [] }
+);
+console.log(skaiciai19);
 
 console.log('--------------');
 
@@ -405,9 +474,30 @@ console.log('--------------');
 console.log('20 užduotis');
 console.log();
 // Sprendimas su for ciklu:
-
-
+const numbers20 = [1, 2, 3, 4];
+let count20 = [];
+let suma20 = 0;
+function kumuotaSuma(nums20) {
+    for (let i = 0; i < nums20.length; i++) {
+        suma20 += nums20[i];
+        count20.push(suma20);
+    }
+        return count20;
+} 
+console.log(kumuotaSuma(numbers20));
 
 // Sprendimas su reduce:
-// Jūsų kodas čia...
+const numbers20reduce = numbers20.reduce((acc, num, i) => { 
+    if (i === 0) {
+        acc.push(num);
+    } else { 
+        acc.push(acc[i - 1] + num)
+    } 
+    return acc;
+} , []);
+
+console.log(numbers20reduce);
+
+
+
 console.log('--------------');
